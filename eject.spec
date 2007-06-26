@@ -1,19 +1,18 @@
 %define	name	eject
 %define	version	2.1.5
-%define	release	2
+%define	release	%mkrel 3
 
 Name:		%{name}
 Summary:	A program that ejects removable media using software control
 Version:	%{version}
-Release:	%mkrel %{release}
+Release:	%{release}
 License:	GPL
 Url:		http://ca.geocities.com/jefftranter%40rogers.com/eject.html
 Group:		System/Kernel and hardware
 Source0:	http://ca.geocities.com/jefftranter%40rogers.com/%{name}-%{version}.tar.gz
-Patch0: eject-2.1.4-supermount.patch
 Patch1: eject-2.1.4-scsi-rdwr.patch
 BuildRequires:	gettext
-BuildRequires:	automake1.9
+BuildRequires:	automake
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -27,7 +26,6 @@ software control.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1 -b .supermount
 %patch1 -p1 -b .scsi
 
 %build
