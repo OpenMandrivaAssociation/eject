@@ -13,6 +13,7 @@ Source0:	http://ca.geocities.com/jefftranter%40rogers.com/%{name}-%{version}.tar
 Patch1: eject-2.1.4-scsi-rdwr.patch
 BuildRequires:	gettext
 BuildRequires:	automake
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The eject program allows the user to eject removable media
