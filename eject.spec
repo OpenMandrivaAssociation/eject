@@ -1,6 +1,6 @@
 %define	name	eject
 %define	version	2.1.5
-%define	release	%mkrel 4
+%define	release	%mkrel 5
 
 Name:		%{name}
 Summary:	A program that ejects removable media using software control
