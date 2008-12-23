@@ -1,11 +1,7 @@
-%define	name	eject
-%define	version	2.1.5
-%define	release	%mkrel 5
-
-Name:		%{name}
+Name:		eject
 Summary:	A program that ejects removable media using software control
-Version:	%{version}
-Release:	%{release}
+Version:	2.1.5
+Release:	%mkrel 6
 License:	GPL
 Url:		http://ca.geocities.com/jefftranter%40rogers.com/eject.html
 Group:		System/Kernel and hardware
