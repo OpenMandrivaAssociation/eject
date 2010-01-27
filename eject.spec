@@ -7,6 +7,10 @@ Url:		http://ca.geocities.com/jefftranter%40rogers.com/eject.html
 Group:		System/Kernel and hardware
 Source0:	http://ca.geocities.com/jefftranter%40rogers.com/%{name}-%{version}.tar.gz
 Patch1: eject-2.1.4-scsi-rdwr.patch
+Patch2: eject-2.0.13-xmalloc.patch
+Patch3: eject-2.1.5-handle-spaces.patch
+Patch4: eject-2.1.5-man-typo.patch
+Patch5: eject-2.1.5-toggle.patch
 BuildRequires:	gettext
 BuildRequires:	automake
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -23,9 +27,13 @@ software control.
 %prep
 %setup -q -n %{name}
 %patch1 -p1 -b .scsi
+%patch2 -p0 -b .xmalloc
+%patch3 -p0
+%patch4 -p0
+%patch5 -p1
 
 %build
-%configure
+%configure2_5x
 %make DEFAULTDEVICE="/dev/cdrom"
 
 %install
