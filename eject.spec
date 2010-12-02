@@ -1,7 +1,7 @@
 Name:		eject
 Summary:	A program that ejects removable media using software control
 Version:	2.1.5
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	GPLv2+
 Url:		http://ca.geocities.com/jefftranter%40rogers.com/eject.html
 Group:		System/Kernel and hardware
