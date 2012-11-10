@@ -1,0 +1,36 @@
+--- eject.c.xmalloc	2010-01-27 03:12:42.000000000 +0100
++++ eject.c	2010-01-27 03:12:42.000000000 +0100
+@@ -346,6 +346,15 @@
+ 	}
+ }
+ 
++void *xmalloc(size_t size)
++{
++	void *ret = malloc(size);
++	if (!ret) {
++		fprintf(stderr, _("%s: could not allocate memory\n"), programName);
++		exit(1);
++	}
++	return ret;
++}
+ 
+ /* Return 1 if file/device exists, 0 otherwise. */
+ static int FileExists(const char *name, const int try, int *found)
+@@ -391,7 +400,7 @@
+ 	static int try = 0;
+ 	int found = 0;
+ 
+-	buf = (char *) malloc(strlen(name)+14); /* to allow for "/dev/cdroms/ + "0" + null */
++	buf = (char *) xmalloc(strlen(name)+14); /* to allow for "/dev/cdroms/ + "0" + null */
+ 	if (buf==NULL) {
+ 		fprintf(stderr, _("%s: could not allocate memory\n"), programName);
+ 		exit(1);
+@@ -1040,7 +1049,7 @@
+ 		status = regexec(&preg, name, 1, 0, 0);
+ 		regfree(&preg);
+ 		if (status == 0) {
+-			result = (char *) malloc(strlen(name) + 25);
++			result = (char *) xmalloc(strlen(name) + 25);
+ 			if (result == NULL) {
+ 				fprintf(stderr, _("%s: could not allocate memory\n"), programName);
+ 				exit(1);
