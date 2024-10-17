@@ -3,7 +3,7 @@ Summary:	A program that ejects removable media using software control
 Version:	2.1.5
 Release:	%mkrel 12
 License:	GPLv2+
-Url:		http://ca.geocities.com/jefftranter%40rogers.com/eject.html
+Url:		https://ca.geocities.com/jefftranter%40rogers.com/eject.html
 Group:		System/Kernel and hardware
 Source0:	http://ca.geocities.com/jefftranter%40rogers.com/%{name}-%{version}.tar.gz
 Patch1: eject-2.1.4-scsi-rdwr.patch
